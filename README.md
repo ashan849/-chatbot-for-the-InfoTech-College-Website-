@@ -36,4 +36,8 @@ using Anaconda and Jupyter Notebook.
 
 **Example folder structure:**
 
-
+project_folder/
+├─ InfortechGPT_notebook.ipynb
+├─ docs/
+├─ file1.pdf
+├─ file2.pdf
