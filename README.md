@@ -40,6 +40,6 @@ using Anaconda and Jupyter Notebook.
 ### Notes:
 - **`docs/`**: Place all PDFs you want the chatbot to read here.  
 - **`chroma_db/`**: Created automatically when the chatbot runs for the first time. Do not delete unless you want to rebuild embeddings.  
-- **`InfortechGPT_notebook.ipynb`**: Run this notebook in Jupyter to start the chatbot.  
+- **`RAG-chatbot.ipynb`**: Run this notebook in Jupyter to start the chatbot.  
 - **`README.md`**: Provides instructions for setup and usage.
 
