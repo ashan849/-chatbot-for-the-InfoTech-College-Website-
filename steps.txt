@@ -1,0 +1,73 @@
+InfortechGPT Chatbot - User Guide (Jupyter Notebook / Anaconda)
+----------------------------------------------------------------
+
+This guide explains how to set up and run the InfortechGPT RAG-based PDF chatbot
+using Anaconda and Jupyter Notebook.
+
+Requirements:
+-------------
+1. Anaconda installed with Python 3.10 or higher.
+2. A folder named "docs" containing your PDF files.
+3. Internet connection (to download language models if not cached).
+
+Step 1: Open Anaconda
+---------------------
+1. Launch the Anaconda Navigator.
+2. Open Jupyter Notebook from Anaconda Navigator.
+3. Navigate to the folder where the chatbot files are stored.
+
+Step 2: Prepare PDF Documents
+-----------------------------
+1. Create a folder named "docs" in the same directory as the notebook.
+2. Place all PDF files you want the chatbot to read into the "docs" folder.
+   Example folder structure:
+   project_folder/
+   ├─ InfortechGPT_notebook.ipynb
+   ├─ docs/
+      ├─ file1.pdf
+      ├─ file2.pdf
+
+Step 3: Install Required Packages
+---------------------------------
+In a new Jupyter cell, run:
+
+!pip install langchain langchain-huggingface langchain-ollama langchain-chroma sentence-transformers chromadb
+
+Step 4: Load and Run the Chatbot
+--------------------------------
+1. Open the notebook file (`InfortechGPT_notebook.ipynb`) in Jupyter.
+2. Run all cells sequentially from top to bottom:
+   - The notebook will load the PDFs from the "docs" folder.
+   - It will build or load the Chroma vectorstore.
+   - The chatbot GUI will open as a tkinter window.
+
+Step 5: Ask Questions
+---------------------
+1. Type your question in the input box at the top of the GUI window.
+2. Click the "Ask" button.
+3. The chatbot will display answers retrieved from your PDFs.
+
+Step 6: How the Vectorstore Works
+---------------------------------
+1. When run for the first time, all PDFs are split into 1000-character chunks.
+2. Embeddings are created for each chunk and stored in a local Chroma vectorstore ("chroma_db").
+3. Subsequent runs use the existing vectorstore for faster responses.
+
+Step 7: Updating PDFs
+---------------------
+1. Add new PDF files to the "docs" folder.
+2. Delete the existing "chroma_db" folder (optional but recommended).
+3. Re-run the notebook to rebuild the vectorstore with the new PDFs.
+
+Step 8: Tips for Users
+----------------------
+- Keep PDF file names simple and avoid special characters.
+- Ask clear and specific questions for better answers.
+- Ensure sufficient RAM if using many PDFs.
+
+Troubleshooting:
+----------------
+1. "ModuleNotFoundError": Make sure required packages are installed.
+2. "No PDFs found": Verify the "docs" folder exists and contains PDFs.
+3. Slow responses: The first run may take longer to create embeddings; subsequent runs are faster.
+
